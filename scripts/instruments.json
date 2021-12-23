@@ -1,0 +1,12 @@
+[
+  {"id":1,"title":"Bajo", "price":800000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/bajo.jpeg"},
+  {"id":2,"title":"Batería", "price":1050000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/bateria.jpeg"},
+  {"id":3,"title":"Cajón Peruano", "price":300000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/cajon.png"},
+  {"id":4,"title":"Clarinete", "price":500000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/clarinete.jpeg"},
+  {"id":5,"title":"Guitarra", "price":650000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/guitarra.jpeg"},
+  {"id":6,"title":"Organeta", "price":1800000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/teclado.jpeg"},
+  {"id":7,"title":"Saxofón", "price":1800000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/saxo.jpeg"},
+  {"id":8,"title":"Ukelele", "price":150000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/ukelele.jpeg"},
+  {"id":9,"title":"Violín", "price":280000, "img":"https://er-public-resources.s3.amazonaws.com/Instrumentos/violin.jpeg"}
+]
+  
