@@ -5,15 +5,16 @@ const templateFooter = document.getElementById('template-footer').content;
 const templateCart = document.getElementById('template-cart').content;
 const footer = document.getElementById('footer');
 const fragment = document.createDocumentFragment();
+
 let cart = {};
 
 // El DOMContentLoaded se dispara cuando todo mi document ha sido cargado y parseado
-document.addEventListener('DOMContentLoaded', (e) => {  
+document.addEventListener('DOMContentLoaded', () => {  
   fetchData();
-  // if (localStorage.getItem('car')) {
-  //   cart = JSON.parse(localStorage.getItem('car'))
-  //   renderCart();
-  // }
+  if (localStorage.getItem('littelCar')) {
+    cart = JSON.parse(localStorage.getItem('littelCar'))
+    renderCart();
+  }
 });
 
 cards.addEventListener('click', e =>{
@@ -101,7 +102,7 @@ const renderCart = () => {
 
   renderFooter();
 
-  // localStorage.setItem('car', JSON.stringify(cart))
+  localStorage.setItem('littelCar', JSON.stringify(cart))
 }
 
 const renderFooter = () => {
