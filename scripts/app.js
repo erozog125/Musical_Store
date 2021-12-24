@@ -5,10 +5,10 @@ const templateFooter = document.getElementById('template-footer').content;
 const templateCart = document.getElementById('template-cart').content;
 const footer = document.getElementById('footer');
 const fragment = document.createDocumentFragment();
-let cart = [];
+let cart = {};
 
 // El DOMContentLoaded se dispara cuando todo mi document ha sido cargado y parseado
-document.addEventListener('DOMContentLoaded', e => {  
+document.addEventListener('DOMContentLoaded', (e) => {  
   fetchData();
   // if (localStorage.getItem('car')) {
   //   cart = JSON.parse(localStorage.getItem('car'))
@@ -36,7 +36,7 @@ const fetchData = async () => {
 }
 
 const renderCards = data => {
-  data.map(instrument=>{
+  data.forEach(instrument=>{
     templateCard.querySelector('h4').textContent = instrument.title;
     templateCard.querySelector('p').textContent = instrument.price;
     templateCard.querySelector('img').setAttribute('src',instrument.img);
@@ -45,7 +45,6 @@ const renderCards = data => {
     const cloneTemplate = templateCard.cloneNode(true);
     fragment.appendChild(cloneTemplate);
   })
-
   cards.appendChild(fragment);
 }
 
@@ -54,9 +53,7 @@ const addToCart=(e)=>{
   // console.log(e.target.classList.contains('btn-dark'));
   if (e.target.classList.contains('btn-dark')) {
     // console.log(e.target.parentElement);
-    setCart(e.target.parentElement);
-    console.log(cart);
-    console.log(cart.length);
+    setCart(e.target.parentElement);    
   }
   e.stopPropagation();
 }
@@ -71,13 +68,15 @@ const setCart = element => {
   }
 
   if(cart.hasOwnProperty(product.id)) {
-    // console.log(cart[product.id]);
     product.quantity = cart[product.id].quantity + 1
   }
 
-  cart[product.id] = {...product}
-  console.log(cart);
+  cart[product.id] = {...product}; 
+  
   renderCart();
+  console.log(product);  
+  console.log(cart);  
+  console.log(cart[product.id]);
 }
 
 const renderCart = () => {
